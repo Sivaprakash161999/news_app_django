@@ -14,7 +14,7 @@ def home(request):
     if search is None or search=="top":
         # get the top news
         url = "https://newsapi.org/v2/top-headlines?country={}&page={}&apiKey={}".format(
-            "us", 1, settings.APIKEY
+            "in", 1, settings.APIKEY
         )
     else:
         # get the search query request
@@ -50,11 +50,11 @@ def loadcontent(request):
         search = request.GET.get("search", None)
         if search is None or search == "top":
             url = "https://newsapi.org/v2/top-headlines?country={}&page={}&apiKey={}".format(
-                "us", page, settings.APIKEY
+                "in", page, settings.APIKEY
             )
         else:
             url = "https://newsapi.org/v2/everything?q={}&sortBy={}&page={}&apiKey={}".format(
-                "us", page, settings.APIKEY
+                "in", page, settings.APIKEY
             )
         print("url:", url)
         r = request.get(url=url)
